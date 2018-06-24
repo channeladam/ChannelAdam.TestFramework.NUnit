@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <Description>A .NET Standard 1.6 library for using the NUnit 3 (and Moq) on top of the ChannelAdam Test Framework.</Description>
+    <PackageReleaseNotes>4.0.0 - Refactored out of ChannelAdam.TestFrameworks repo, target .NET Standard 1.6, no strong name signing, semver</PackageReleaseNotes>
+    <Version>0.0.0</Version>
+    <Authors>Adam Craven</Authors>
+    <Copyright>Copyright 2014-2018 Adam Craven</Copyright>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/channeladam/ChannelAdam.TestFramework.NUnit</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/channeladam/ChannelAdam.TestFramework.NUnit</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageIconUrl>https://devzone.channeladam.com/img/channeladam/channeladam-logo.png</PackageIconUrl>
+    <PackageTags>ChannelAdam,Tests,Unit,Integration,NUnit</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ChannelAdam.TestFramework.Moq" Version="2.0.2" />
+    <PackageReference Include="NUnit" Version="3.10.1" />
+  </ItemGroup>
+
+</Project>
