@@ -1,23 +1,42 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.6</TargetFramework>
-    <Description>A .NET Standard 1.6 library for using the NUnit 3 (and Moq) on top of the ChannelAdam Test Framework.</Description>
-    <PackageReleaseNotes>4.0.0 - Refactored out of ChannelAdam.TestFrameworks repo, target .NET Standard 1.6, no strong name signing, semver</PackageReleaseNotes>
+    <TargetFrameworks>net5.0;netstandard2.0;netstandard1.6</TargetFrameworks>
     <Version>0.0.0</Version>
     <Authors>Adam Craven</Authors>
-    <Copyright>Copyright 2014-2018 Adam Craven</Copyright>
-    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <Company>Adam Craven</Company>
+    <Product>ChannelAdam.TestFramework.NUnit</Product>
+    <Description>A .NET library for using the NUnit 3 (and Moq) on top of the ChannelAdam Test Framework.</Description>
+    <Copyright>Copyright 2014-2020 Adam Craven</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/channeladam/ChannelAdam.TestFramework.NUnit</PackageProjectUrl>
     <RepositoryUrl>https://github.com/channeladam/ChannelAdam.TestFramework.NUnit</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://devzone.channeladam.com/img/channeladam/channeladam-logo.png</PackageIconUrl>
+    <PackageReleaseNotes>
+5.0.0 - Multitarget .NET Standard 1.6, 2.0, and .NET 5.0, enabled nullable reference types, update to latest NUnit
+4.0.0 - Refactored out of ChannelAdam.TestFrameworks repo, target .NET Standard 1.6, no strong name signing, semver
+    </PackageReleaseNotes>
     <PackageTags>ChannelAdam,Tests,Unit,Integration,NUnit</PackageTags>
+    <IsPackable>true</IsPackable>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <IncludeSource>true</IncludeSource>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>CS8600;CS8602;CS8603</WarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" $(Nullable) != 'enable' ">
+    <NoWarn>$(NoWarn);CS8632</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ChannelAdam.TestFramework.Moq" Version="2.0.2" />
-    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="ChannelAdam.TestFramework.Moq" Version="3.0.1" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
   </ItemGroup>
 
 </Project>
