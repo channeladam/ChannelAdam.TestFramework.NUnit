@@ -14,6 +14,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://devzone.channeladam.com/img/channeladam/channeladam-logo.png</PackageIconUrl>
     <PackageReleaseNotes>
+5.0.1 - Added missing source link
 5.0.0 - Multitarget .NET Standard 1.6, 2.0, and .NET 5.0, enabled nullable reference types, update to latest NUnit
 4.0.0 - Refactored out of ChannelAdam.TestFrameworks repo, target .NET Standard 1.6, no strong name signing, semver
     </PackageReleaseNotes>
@@ -36,7 +37,11 @@
 
   <ItemGroup>
     <PackageReference Include="ChannelAdam.TestFramework.Moq" Version="3.0.1" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="NUnit" Version="3.12.0" />
-  </ItemGroup>
+ </ItemGroup>
 
 </Project>
